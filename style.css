@@ -1,0 +1,150 @@
+*{
+  /* border: 1px solid red; */
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: url("./img/Arch.jpg");
+  background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+}
+#Wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 98%;
+}
+#Banner{
+  font-family: 'Permanent Marker', cursive;
+  color: #ea7317;
+  /* border: 5px dotted white; */
+  font-size: 38px;
+  font-style: italic;
+  text-shadow: 1px 2px white;
+  margin-top: 3px;
+}
+#input-box, #input-button{
+  background: #f1f0ea;
+  border-radius: 6px;
+  border-style: none;
+  width: 25vw;
+  padding: 4px 10px;
+  text-align: center;
+  font-family: 'Inconsolata', monospace;
+}
+#input-button{
+  width: 10vw;
+}
+#Main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 99%;
+  min-height: 385px;
+  overflow: auto;
+  margin: 15px auto;
+  border-radius: 8px;
+  padding: 8px 15px 15px 5px;
+  border-radius: 6px;
+
+}
+
+.parkInfo{
+  /* opacity: .6; */
+  /* box-shadow: 1px 1px grey; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 32.5%;
+  min-height: 375px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5em;
+  margin: 3px;
+
+}
+.parkImg{
+  width: 99%;
+  height: 225px;
+
+}
+.parkImg img{
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+
+}
+
+.cardFoot{
+  opacity: .89;
+  background: white;
+  width: 99%;
+  min-height: 58%;
+}
+.parkName{
+  /* border: 1px solid red; */
+  font-family: 'Permanent Marker', cursive;
+  padding: 10px;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+.parkDescription{
+  font-size: 12px;
+  padding: 2px;
+  margin: 0px 4px;
+}
+.icons{
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 2px;
+  padding: 5px;
+}
+.parkNumber{
+  opacity: .5;
+}
+.parkUrl{
+  opacity: .5;
+}
+.detailBtn {
+  width: 32px;
+  height: 32px;
+}
+.detailBtn button{
+
+  opacity: .5;
+
+}
+
+#modal {
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
+	overflow: auto;
+	/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
+  display: none;
+}
+#modal-textbox {
+	background-color: white;
+	height: 500px;
+	width: 750px;
+	border-radius: 2px;
+	margin: 150px auto;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+  line-height: 2em;
+  padding: 15px;
+}
+#modalHeader{
+  text-align: center;
+  font-size: 25px;
+  border: 2px solid black;
+}

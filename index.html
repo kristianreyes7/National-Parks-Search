@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+        <title>Park List</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script>
+        <script src="app.js" charset="utf-8"></script>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+          /* font-family: 'Permanent Marker', cursive; */
+        </style>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
+        </style>
+    </head>
+    <body>
+      <div id="Wrapper">
+        <div id="Banner">
+          <div class="header">
+            <h1>Parks List</h1>
+          </div>
+        </div>
+
+          <div id="Searchbar-Container">
+            <form>
+              <input id='input-box' type="text" name="" placeholder="Enter 2 letter state code" value="">
+              <input id='input-button' type="button" name="" value="Search">
+            </form>
+          </div>
+
+              <div id="Main">
+
+              </div>
+              <div id="modal">
+                <div id="modal-textbox">
+                  <button type="button" name="button" class="closeBtn">close</button>
+                  <h4 id="modalHeader"></h4>
+                  <img src="" alt="" id="modalPictures">
+                  <h2 style="text-align: center;">Description</h2>
+                  <p id='modalDescription'></p>
+                  <h2 style="text-align: center;">Directions</h2>
+                  <p id='modalDirections'></p>
+                  <h2 style="text-align: center;">Weather Info</h2>
+                  <p id='modalweatherInfo'></p>
+                  <h2 style="text-align: center;">Typical Hours</h2>
+                  <p id='modalHours'></p>
+
+
+
+
+                </div>
+              </div>
+      </div>
+    </body>
+</html>
