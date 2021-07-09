@@ -3,14 +3,7 @@
   margin: 0;
   padding: 0;
 }
-@media (max-width: 745px){
-  #Main{
-    flex-direction: column;
-  }
-  .parkInfo{
-    width: 98%;
-  }
-}
+
 body{
   background: url("./img/grandcanyon.jpg");
   background-size: cover;
@@ -75,8 +68,8 @@ body{
   text-align: center;
   line-height: 1.5em;
   margin: 3px;
-
 }
+
 .parkImg{
   width: 99%;
   height: 375px;
@@ -125,17 +118,22 @@ body{
 .parkNumber{
   opacity: .5;
 }
+
 .parkUrl{
   opacity: .5;
 }
+
 .detailBtn {
   width: 32px;
   height: 32px;
 }
+.detailBtn:hover, .parkNumber:hover, .parkUrl:hover, #input-button:hover, .closeBtn:hover{
+  transform: scale(1.15);
+  cursor: pointer;
+  text-decoration: underline;
+}
 .detailBtn button{
-
   opacity: .5;
-
 }
 
 #modal {
@@ -166,4 +164,15 @@ body{
   text-align: center;
   font-size: 25px;
   border: 2px solid black;
+}
+@media (max-width: 745px){
+  #Main{
+    flex-direction: column;
+  }
+  .parkInfo{
+    width: 98%;
+  }
+  #modal-textbox{
+    width: 95%;
+  }
 }

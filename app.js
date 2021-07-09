@@ -3,6 +3,7 @@ const $modaltext = $('modal-textbox');
 $(() => {
   $('#input-button').click((e) => {
     searchBar(e);
+
     // console.log(input);
     $.ajax(
       {
@@ -23,7 +24,7 @@ $(() => {
       //open modal
       $('.detailBtn').on('click',(e) => {
         openModal();
-        console.log(parkList[$(e.target).val()]);
+        // console.log(parkList[$(e.target).val()]);
         $('#modalHeader').text(parkList[$(e.target).val()].name);
         // $('#modalAddress').text(parkList[$(e.target).val()].addresses[0].city);
         $('#modalDescription').text(parkList[$(e.target).val()].description);
@@ -38,6 +39,7 @@ $(() => {
 
 
         $('.closeBtn').on('click', closeModal);
+        window.on('click', closeModal);
 
 
       });
@@ -62,11 +64,14 @@ $(() => {
 let input = '';
 const searchBar = (e) => {
   $('#Banner').css('padding-top', '25px');
-  
+
+
   if ($('#input-box').val() === ""){
     input = ''
   }
   input = $("#input-box").val();
+
+
 }
 
 let index = 0;
@@ -100,6 +105,11 @@ const openModal = () => {
 }
 const closeModal = () => {
   $('#modal').css('display', 'none');
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 
