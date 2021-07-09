@@ -3,6 +3,14 @@
   margin: 0;
   padding: 0;
 }
+@media (max-width: 745px){
+  #Main{
+    flex-direction: column;
+  }
+  .parkInfo{
+    width: 98%;
+  }
+}
 body{
   background: url("./img/grandcanyon.jpg");
   background-size: cover;
@@ -98,7 +106,7 @@ body{
   margin-top: 10px;
 }
 .parkDescription{
-  font-size: 12px;
+  font-size: 14px;
   padding: 2px;
   margin: 0px 4px;
 
