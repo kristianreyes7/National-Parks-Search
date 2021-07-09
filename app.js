@@ -62,6 +62,7 @@ $(() => {
 let input = '';
 const searchBar = (e) => {
   $('#Banner').css('padding-top', '25px');
+  
   if ($('#input-box').val() === ""){
     input = ''
   }

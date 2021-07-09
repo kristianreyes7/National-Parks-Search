@@ -86,18 +86,25 @@ body{
   background: white;
   width: 99%;
   min-height: 42%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
 }
 .parkName{
   /* border: 1px solid red; */
   font-family: 'Permanent Marker', cursive;
   padding: 10px;
-  margin-top: 25px;
-  margin-bottom: 0;
+  margin-top: 10px;
 }
 .parkDescription{
   font-size: 12px;
   padding: 2px;
   margin: 0px 4px;
+
+}
+.parkDescription p{
+  width: 100%;
 }
 .icons{
   /* border: 1px solid black; */
