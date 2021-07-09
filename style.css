@@ -169,10 +169,21 @@ body{
   #Main{
     flex-direction: column;
   }
+  #Banner a{
+    font-size: 65px;
+  }
+  #input-box{
+    width: 50vw;
+  }
+  #input-button{
+    width: 25vw;
+  }
   .parkInfo{
     width: 98%;
   }
   #modal-textbox{
-    width: 95%;
+    width: 85%;
+    margin: 50px 15px 15px 15px;
+
   }
 }
