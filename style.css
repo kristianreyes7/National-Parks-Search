@@ -107,6 +107,10 @@ body{
 .parkDescription p{
   width: 100%;
 }
+.pNumber{
+  margin-right: 75%;
+  display: none;
+}
 .icons{
   /* border: 1px solid black; */
   display: flex;

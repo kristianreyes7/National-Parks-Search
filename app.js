@@ -16,10 +16,15 @@ $(() => {
         }
       //end of request
     }).then((object) => {
-      // console.log(object.data);
+      console.log(object.data);
       const parkList = object.data;
       parkList.forEach((i) => {
         createCard(i);
+        $('.parkNumber').on('mouseenter',() => {
+          $('.pNumber').css('display', 'inherit').css('border', '2px solid black').css('padding','5px'); 
+        }).on('mouseleave', () => {
+          $('.pNumber').css('display', 'none');
+        })
       })
       //open modal
       $('.detailBtn').on('click',(e) => {
@@ -94,6 +99,7 @@ const createCard = (i) => {
   const $name = $('<h4>').text(i.name).addClass('parkName').appendTo($cardFooter);
   const $description = $('<p>').text(i.description).addClass('parkDescription').appendTo($cardFooter);
   //icon container for phone web and more details
+  const $phonePopUp = $('<p>').addClass('pNumber').text(i.contacts.phoneNumbers[0].phoneNumber).appendTo($cardFooter);
   const $iconContainer = $('<div>').addClass('icons').appendTo($cardFooter);
   const $number = $('<a>').attr('href',`#`).addClass('parkNumber').html(`<img src="./img/phone.png" alt="">`).appendTo($iconContainer);
   //details button
