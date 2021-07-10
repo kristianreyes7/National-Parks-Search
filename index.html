@@ -17,6 +17,7 @@
     </head>
     <body>
       <div id="Wrapper">
+
         <div id="Banner">
           <div class="header">
             <a href="index.html">Parks List</a>
@@ -31,27 +32,44 @@
           </div>
 
               <div id="Main">
-
               </div>
+
               <div id="modal">
                 <div id="modal-textbox">
-                  <button type="button" name="button" class="closeBtn">close</button>
-                  <h4 id="modalHeader"></h4>
-                  <img src="" alt="" id="modalPictures">
-                  <h2 style="text-align: center;">Description</h2>
-                  <p id='modalDescription'></p>
-                  <h2 style="text-align: center;">Directions</h2>
-                  <p id='modalDirections'></p>
-                  <h2 style="text-align: center;">Weather Info</h2>
-                  <p id='modalweatherInfo'></p>
-                  <h2 style="text-align: center;">Typical Hours</h2>
-                  <p id='modalHours'></p>
+                  <div class="closeBtnModal">
+                    <button type="button" name="button" class="closeBtn">close</button>
+                  </div>
+                  <div class="modalBanner">
+                    <h4 id="modalHeader"></h4>
+                    <h2 style="text-align: center;">Address</h2>
+                    <p id='modalAddress'></p>
+                  </div>
 
-
-
-
+                  <div class="modalMain">
+                    <div class="modalSideBar">
+                      <h2 style="text-align: center;">Entrance Fees</h2>
+                      <ul id='modalCost'>
+                      </ul>
+                      <h2 style="text-align: center;">Typical Hours</h2>
+                      <p id='modalHours'></p>
+                    </div>
+                    <div class="modalBody">
+                      <h2 style="text-align: center;">Description</h2>
+                      <p id='modalDescription'></p>
+                      <h2 style="text-align: center;">Directions</h2>
+                      <p id='modalDirections'></p>
+                      <h2 style="text-align: center;">Weather Info</h2>
+                      <p id='modalweatherInfo'></p>
+                    </div>
+                  </div>
+                  <div class="modalFoot">
+                    <h2 style="text-align: center;">Activities</h2>
+                    <ul id='modalActivities'>
+                    </ul>
+                  </div>
                 </div>
               </div>
+
       </div>
     </body>
 </html>

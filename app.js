@@ -3,7 +3,6 @@ const $modaltext = $('modal-textbox');
 $(() => {
   $('#input-button').click((e) => {
     searchBar(e);
-
     // console.log(input);
     $.ajax(
       {
@@ -17,6 +16,7 @@ $(() => {
         }
       //end of request
     }).then((object) => {
+      // console.log(object.data);
       const parkList = object.data;
       parkList.forEach((i) => {
         createCard(i);
@@ -24,29 +24,39 @@ $(() => {
       //open modal
       $('.detailBtn').on('click',(e) => {
         openModal();
-        // console.log(parkList[$(e.target).val()]);
-        $('#modalHeader').text(parkList[$(e.target).val()].name);
-        // $('#modalAddress').text(parkList[$(e.target).val()].addresses[0].city);
-        $('#modalDescription').text(parkList[$(e.target).val()].description);
-        $('#modalweatherInfo').text(parkList[$(e.target).val()].weatherInfo);
-        $('#modalDirections').text(parkList[$(e.target).val()].directionsInfo);
-        $('#modalHours').text(parkList[$(e.target).val()].operatingHours[0].description);
-        // $('#modalPictures').attr('src', parkList[$(e.target).val()].images[Math.floor(Math.random() * parkList[$(e.target).val()].images.length)].url, 'alt', `${parkList[$(e.target).val()].url}`)
-
-
-
-
-
-
+        createModal(e);
         $('.closeBtn').on('click', closeModal);
-        window.on('click', closeModal);
-
-
+        $('#modal').on('click', closeModal);
       });
 
 
 
 
+      const createModal = (e) => {
+        let pIndex = $(e.target).val();
+        const activityArray = [];
+        parkList[pIndex].activities.forEach((i) => {
+          activityArray.push(i.name);
+        })
+        const priceArray = [];
+        parkList[pIndex].entranceFees.forEach((i) => {
+          priceArray.push(i.title+": "+i.cost);
+        })
+        const modalAddress = parkList[pIndex].addresses[0].line1 + " "+ parkList[pIndex].addresses[0].city+","+parkList[pIndex].addresses[0].stateCode+" "+parkList[pIndex].addresses[0].postalCode;
+
+        $('#modalHeader').text(parkList[pIndex].name);
+        $('#modalAddress').text(modalAddress);
+        $('#modalDescription').text(parkList[pIndex].description);
+        $('#modalweatherInfo').text(parkList[pIndex].weatherInfo);
+        $('#modalDirections').text(parkList[pIndex].directionsInfo);
+        $('#modalHours').text(parkList[pIndex].operatingHours[0].description);
+        activityArray.forEach((i) => {
+          const $activityList = $('<li>').text(i).appendTo('#modalActivities');
+        })
+        priceArray.forEach((i) => {
+          const $priceList = $('<li>').text(i).appendTo('#modalCost');
+        })
+      }
     },
     //bad request
     () => {
@@ -60,18 +70,13 @@ $(() => {
   })
   // end of document ready
 })
-
 let input = '';
 const searchBar = (e) => {
   $('#Banner').css('padding-top', '25px');
-
-
   if ($('#input-box').val() === ""){
     input = ''
   }
   input = $("#input-box").val();
-
-
 }
 
 let index = 0;
@@ -106,11 +111,7 @@ const openModal = () => {
 const closeModal = () => {
   $('#modal').css('display', 'none');
 }
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+
 
 
 //
