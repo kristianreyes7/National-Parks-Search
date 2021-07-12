@@ -194,7 +194,7 @@ body{
   display: grid;
   grid-template-columns: repeat(2,1fr);
 }
-@media (max-width: 745px){
+@media (max-width: 800px){
   #Main{
     flex-direction: column;
   }

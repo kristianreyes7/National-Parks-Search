@@ -16,7 +16,7 @@ $(() => {
         }
       //end of request
     }).then((object) => {
-      console.log(object.data);
+      // console.log(object.data);
       const parkList = object.data;
       parkList.forEach((i) => {
         createCard(i);
